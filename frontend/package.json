@@ -15,7 +15,15 @@
     "react-dom": "^19.2.4",
     "react-router-dom": "^7.13.2",
     "recharts": "^3.8.1",
-    "tesseract.js": "^7.0.0"
+    "tesseract.js": "^7.0.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.19.1",
+    "multer": "^2.1.1",
+    "nodemailer": "^7.0.9"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
