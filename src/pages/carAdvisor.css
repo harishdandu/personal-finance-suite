@@ -1,0 +1,527 @@
+.carAdvisorPage {
+  min-height: calc(100vh - 84px);
+  display: flex;
+  justify-content: center;
+  padding: 20px 12px;
+  box-sizing: border-box;
+  background: #f3f4f6;
+}
+
+.carAdvisorCard {
+  width: 440px;
+  max-width: 100%;
+  border: 1px solid #ddd6fe;
+  border-radius: 16px;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+}
+
+.carAdvisorCard.isWide {
+  width: min(560px, 100%);
+}
+
+.carChatHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: linear-gradient(90deg, #8b5cf6, #a855f7);
+  color: #fff;
+}
+
+.carChatAvatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.carChatHeadMeta {
+  min-width: 0;
+  flex: 1;
+}
+
+.carChatHeadTitle {
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.carChatHeadSub {
+  font-size: 11px;
+  opacity: 0.95;
+}
+
+.carChatMenuBtn {
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  color: #fff;
+  background: transparent;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.carChatBlock,
+.carResultBlock {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  padding: 12px;
+  background: #fafafa;
+}
+
+.carProgress {
+  font-size: 12px;
+  font-weight: 900;
+  color: #4b5563;
+}
+
+.carBotBubble {
+  margin-top: 10px;
+  display: inline-block;
+  max-width: 82%;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  color: #1f2937;
+  padding: 9px 11px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.carUserBubble {
+  margin-top: 8px;
+  margin-left: auto;
+  max-width: 82%;
+  background: #a855f7;
+  border: 1px solid #9333ea;
+  color: #fff;
+  padding: 9px 11px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 13px;
+  text-align: left;
+}
+
+.carChatUi {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.carChatRows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: min(58vh, 560px);
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.carChatRow {
+  display: flex;
+  flex-direction: column;
+}
+
+.carOptionPane {
+  margin-top: 8px;
+  align-self: flex-end;
+  width: min(640px, 100%);
+  border: 1px solid #eadcff;
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 9px;
+  box-sizing: border-box;
+}
+
+/* Body type grid (reference: card multi-select, teal accent) */
+.carBodySection {
+  margin-bottom: 10px;
+}
+
+.carBodySectionHead {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 4px 2px 10px;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  font-weight: 800;
+  color: #1f2937;
+  cursor: pointer;
+  text-align: left;
+}
+
+.carBodyChevron {
+  display: inline-block;
+  font-size: 12px;
+  color: #6b7280;
+  transition: transform 0.15s ease;
+  transform: rotate(180deg);
+}
+
+.carBodyChevron.isOpen {
+  transform: rotate(0deg);
+}
+
+.carBodyGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+@media (max-width: 520px) {
+  .carBodyGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.carBodyCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+  min-height: 96px;
+  padding: 10px 8px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: #fff;
+  color: #6b7280;
+  cursor: pointer;
+  font: inherit;
+  transition:
+    border-color 0.12s ease,
+    color 0.12s ease,
+    box-shadow 0.12s ease;
+}
+
+.carBodyCard:hover {
+  border-color: #94a3b8;
+}
+
+.carBodyCard.isSelected {
+  border-color: #0f766e;
+  border-width: 2px;
+  padding: 9px 7px 7px;
+  color: #0f766e;
+  box-shadow: 0 0 0 1px rgba(15, 118, 110, 0.12);
+}
+
+.carBodyCheck {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  background: #0f766e;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 18px;
+  text-align: center;
+}
+
+.carBodyIconWrap {
+  width: 100%;
+  max-width: 72px;
+  color: inherit;
+  opacity: 0.92;
+}
+
+.carBodyIconWrap svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.carBodyLabel {
+  font-size: 11px;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.2;
+  color: inherit;
+}
+
+.carBtnTeal {
+  background: #0f766e;
+}
+
+.carBtnTeal:hover {
+  filter: brightness(1.05);
+}
+
+.carMakeHint {
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #6b7280;
+}
+
+.carMakeChipGrid {
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.carOptionGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.carOptionBtn {
+  border: 1px solid #d8b4fe;
+  border-radius: 999px;
+  background: #faf5ff;
+  color: #6b21a8;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.carOptionBtn.isSelected {
+  background: #a855f7;
+  border-color: #9333ea;
+  color: #ffffff;
+}
+
+.carInput {
+  margin-top: 10px;
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.carMultiWrap {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.carSpecChip {
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  background: #fff;
+  color: #1f2937;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 7px 10px;
+  cursor: pointer;
+}
+
+.carSpecChip.isSelected {
+  background: #eef2ff;
+  border-color: #6366f1;
+  color: #3730a3;
+}
+
+.carActions {
+  margin-top: 8px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.carBtn {
+  border: none;
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 900;
+  color: #fff;
+  background: #9333ea;
+  cursor: pointer;
+}
+
+.carBtn.ghost {
+  color: #6b21a8;
+  background: #fff;
+  border: 1px solid #d8b4fe;
+}
+
+.carResultHead {
+  font-size: 15px;
+  font-weight: 900;
+  color: #111827;
+}
+
+.carItem {
+  margin-top: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+  padding: 10px;
+}
+
+.carModel {
+  font-size: 15px;
+  font-weight: 900;
+  color: #111827;
+}
+
+.carMeta {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #4b5563;
+  font-weight: 700;
+}
+
+.carReasons {
+  margin: 8px 0 0 18px;
+  padding: 0;
+  color: #374151;
+  font-size: 12px;
+}
+
+.carLifeFit {
+  margin-top: 12px;
+  padding: 12px 12px 8px;
+  background: #f8f5ff;
+  border: 1px solid #e9d5ff;
+  border-radius: 14px;
+}
+
+.carLifeFitTop {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.carLifeFitRing {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  position: relative;
+  display: grid;
+  place-items: center;
+  background: conic-gradient(#8b5cf6 calc(var(--score) * 1%), #e5e7eb 0);
+}
+
+.carLifeFitRing::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.carLifeFitRing span {
+  position: relative;
+  font-size: 14px;
+  font-weight: 900;
+  color: #111827;
+}
+
+.carLifeFitDetails {
+  flex: 1;
+  min-width: 0;
+}
+
+.carLifeFitLabel {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5b21b6;
+}
+
+.carLifeFitBar {
+  margin-top: 8px;
+  width: 100%;
+  min-height: 10px;
+  border-radius: 999px;
+  background: #ede9fe;
+  overflow: hidden;
+}
+
+.carLifeFitFill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #a855f7, #7c3aed);
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.18);
+}
+
+.carLifeFitText {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #4b5563;
+  line-height: 1.4;
+}
+
+.carViewMoreRow {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #f3f4f6;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+  font-size: 11px;
+}
+
+.carViewMoreLabel {
+  font-weight: 900;
+  color: #374151;
+}
+
+.carViewMoreLink {
+  font-weight: 800;
+  color: #7c3aed;
+  text-decoration: none;
+}
+
+.carViewMoreLink:hover {
+  text-decoration: underline;
+}
+
+.carViewMoreSep {
+  color: #9ca3af;
+  font-weight: 700;
+}
+
+.carViewMoreHint {
+  font-weight: 600;
+  color: #9ca3af;
+  font-size: 10px;
+}
+
+.carEmpty {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+@media (max-width: 640px) {
+  .carAdvisorPage {
+    min-height: calc(100vh - 112px);
+    padding: 8px;
+  }
+
+  .carUserBubble {
+    max-width: 100%;
+  }
+
+  .carOptionPane {
+    width: 100%;
+  }
+}

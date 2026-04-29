@@ -1,0 +1,777 @@
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.hero {
+  position: relative;
+
+  .base,
+  .framework,
+  .vite {
+    inset-inline: 0;
+    margin: 0 auto;
+  }
+
+  .base {
+    width: 170px;
+    position: relative;
+    z-index: 0;
+  }
+
+  .framework,
+  .vite {
+    position: absolute;
+  }
+
+  .framework {
+    z-index: 1;
+    top: 34px;
+    height: 28px;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
+      scale(1.4);
+  }
+
+  .vite {
+    z-index: 0;
+    top: 107px;
+    height: 26px;
+    width: auto;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
+      scale(0.8);
+  }
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+}
+
+#next-steps {
+  display: flex;
+  border-top: 1px solid var(--border);
+  text-align: left;
+
+  & > div {
+    flex: 1 1 0;
+    padding: 32px;
+    @media (max-width: 1024px) {
+      padding: 24px 20px;
+    }
+  }
+
+  .icon {
+    margin-bottom: 16px;
+    width: 22px;
+    height: 22px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+#docs {
+  border-right: 1px solid var(--border);
+
+  @media (max-width: 1024px) {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+#next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0;
+
+  .logo {
+    height: 18px;
+  }
+
+  a {
+    color: var(--text-h);
+    font-size: 16px;
+    border-radius: 6px;
+    background: var(--social-bg);
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: var(--shadow);
+    }
+    .button-icon {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      flex: 1 1 calc(50% - 8px);
+    }
+
+    a {
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+}
+
+#spacer {
+  height: 88px;
+  border-top: 1px solid var(--border);
+  @media (max-width: 1024px) {
+    height: 48px;
+  }
+}
+
+.ticks {
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    border: 5px solid transparent;
+  }
+
+  &::before {
+    left: 0;
+    border-left-color: var(--border);
+  }
+  &::after {
+    right: 0;
+    border-right-color: var(--border);
+  }
+}
+
+/* SIP Calculator UI */
+.sipPage {
+  min-height: 100vh;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 24px 12px;
+  box-sizing: border-box;
+}
+
+.sipCard {
+  --accent: #d11f2f;
+  --track: #e2e2e2;
+  --handle: #ffffff;
+
+  width: 1000px;
+  max-width: 100%;
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.expandedLayout {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.expandedRight {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.collapsedLayout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.leftColCollapsed {
+  padding-right: 6px;
+}
+
+.topLabel {
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.radioGroup {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.radioOption {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-weight: 700;
+  color: #111827;
+  user-select: none;
+}
+
+.radioOption input[type='radio'] {
+  accent-color: var(--accent);
+  width: 16px;
+  height: 16px;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  column-gap: 20px;
+  row-gap: 0;
+  align-items: start;
+}
+
+.leftCol {
+  padding-right: 6px;
+  display: grid;
+  grid-template-columns: minmax(108px, 44%) 1fr;
+  column-gap: 10px;
+  row-gap: 10px;
+  align-items: center;
+}
+
+.leftCol > .fieldRow {
+  display: contents;
+}
+
+.leftCol > .checkboxRow {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(108px, 44%) 1fr;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.leftCol > .checkboxRow .checkboxLabel {
+  grid-column: 2;
+  justify-self: start;
+}
+
+.leftCol > .yearlySipBlock {
+  grid-column: 1 / -1;
+}
+
+.leftCol > .sliderRow {
+  grid-column: 1 / -1;
+}
+
+.leftCol > .statsArea {
+  grid-column: 1 / -1;
+}
+
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.topControls {
+  grid-area: top;
+  padding-right: 6px;
+}
+
+.inputsAndStats {
+  grid-area: inputs;
+  display: flex;
+  flex-direction: column;
+}
+
+.chartWrapper {
+  grid-area: chart;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.fieldRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0;
+}
+
+.fieldLabel {
+  color: #111827;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 1.3;
+  min-width: 0;
+}
+
+.moneyInput {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  border: 1px solid #dedede;
+  border-radius: 8px;
+  padding: 0 10px;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.moneyInput.isDisabled {
+  opacity: 0.55;
+  background: #f5f5f5;
+}
+
+.moneyPrefix {
+  font-weight: 900;
+  color: #111827;
+  margin-right: 6px;
+}
+
+.moneySuffix {
+  margin-left: 6px;
+  font-weight: 800;
+  color: #111827;
+  white-space: nowrap;
+}
+
+.moneyField {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: transparent;
+}
+
+.sliderRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  width: 100%;
+}
+
+.sliderLabelTop {
+  flex: 0 1 44%;
+  min-width: 0;
+  color: #111827;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.sliderMainRow {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sliderMain {
+  flex: 1;
+  min-width: 0;
+}
+
+.range {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  background: linear-gradient(
+    to right,
+    var(--accent) 0%,
+    var(--accent) var(--percent),
+    var(--track) var(--percent),
+    var(--track) 100%
+  );
+}
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--handle);
+  border: 2px solid #cfcfcf;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.range::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--handle);
+  border: 2px solid #cfcfcf;
+}
+
+.sliderValue {
+  flex: 0 0 auto;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.valueBox {
+  width: 64px;
+  min-width: 52px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #d7d7d7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 14px;
+  color: #111827;
+  background: #ffffff;
+}
+
+.valueSuffix {
+  font-weight: 800;
+  color: #111827;
+}
+
+.statsArea {
+  margin-top: 14px;
+}
+
+.statsTop {
+  display: flex;
+  gap: 24px;
+}
+
+.statBlock {
+  flex: 1;
+}
+
+.statLabel {
+  color: #111827;
+  font-weight: 800;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.statValue {
+  color: var(--accent);
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.rupeePrefix {
+  margin-right: 4px;
+}
+
+.statTotal {
+  margin-top: 16px;
+}
+
+.statTotalValue {
+  color: var(--accent);
+  font-weight: 950;
+  font-size: 28px;
+  line-height: 1.05;
+}
+
+.chartArea {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 22px;
+}
+
+.donutWrap {
+  position: relative;
+  width: 220px;
+  height: 220px;
+}
+
+.donutCenterOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlayInterest {
+  color: #0b4aa6;
+  font-weight: 950;
+  font-size: 30px;
+  margin-top: -2px;
+}
+
+.overlayPrincipal {
+  margin-top: 62px;
+  width: 86px;
+  height: 58px;
+  border-radius: 8px;
+  background: rgba(7, 27, 42, 0.95);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 950;
+  font-size: 22px;
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.legendSquare {
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.legendText {
+  color: #111827;
+  font-weight: 800;
+}
+
+.lumpsumNote {
+  margin-top: 14px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.yearlySipBlock {
+  margin-top: 12px;
+  border: 1px solid #e9e9e9;
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: #ffffff;
+}
+
+.yearlySipHeader {
+  appearance: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.yearlySipTitle {
+  font-weight: 900;
+  font-size: 14px;
+  color: #111827;
+}
+
+.yearlySipChevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: #f3f4f6;
+  color: #111827;
+  font-size: 14px;
+  transform: rotate(0deg);
+  transition: transform 0.15s ease;
+}
+
+.yearlySipChevron.isOpen {
+  transform: rotate(0deg);
+}
+
+.yearlySipChevron:not(.isOpen) {
+  transform: rotate(-180deg);
+}
+
+.yearlySipRows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.yearlySipRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.yearlySipYear {
+  font-weight: 800;
+  font-size: 13px;
+  color: #111827;
+}
+
+.yearlySipAmount {
+  font-weight: 900;
+  font-size: 13px;
+  color: #111827;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.checkboxRow {
+  margin: 0;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  color: #111827;
+  font-size: 13px;
+  user-select: none;
+}
+
+.checkboxLabel input[type='checkbox'] {
+  accent-color: #d11f2f;
+}
+
+@media (max-width: 920px) {
+  .expandedLayout,
+  .collapsedLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sliderLabel,
+  .fieldLabel {
+    min-width: 0;
+  }
+
+  .sliderRow {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .sliderMainRow {
+    width: auto;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .sliderValue {
+    width: auto;
+    justify-content: flex-start;
+  }
+
+  .sliderMain {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .range {
+    display: block;
+    width: 100%;
+  }
+
+  .statsTop {
+    flex-direction: column;
+  }
+
+  .chartArea {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 520px) {
+  .leftCol {
+    grid-template-columns: minmax(96px, 40%) 1fr;
+    column-gap: 8px;
+    row-gap: 8px;
+  }
+
+  .leftCol > .checkboxRow {
+    grid-template-columns: minmax(96px, 40%) 1fr;
+    column-gap: 8px;
+  }
+
+  .fieldLabel,
+  .sliderLabelTop {
+    font-size: 13px;
+  }
+
+  .valueBox {
+    width: 52px;
+    min-width: 48px;
+    height: 38px;
+    font-size: 13px;
+  }
+
+  .donutWrap {
+    width: 200px;
+    height: 200px;
+  }
+}

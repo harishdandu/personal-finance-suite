@@ -1,0 +1,914 @@
+.fundAdvisorPage {
+  min-height: calc(100vh - 84px);
+  padding: 20px 12px;
+  box-sizing: border-box;
+  background: #f3f4f6;
+  display: flex;
+  justify-content: center;
+}
+
+.fundCard {
+  width: 900px;
+  max-width: 100%;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+  padding: 14px;
+}
+
+.fundTitle {
+  font-size: 26px;
+  font-weight: 950;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.fundSub {
+  margin-top: 2px;
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.fundForm {
+  margin-top: 6px;
+}
+
+.fundBuilderTop {
+  display: block;
+}
+
+.fundLabel {
+  display: block;
+  font-size: 12px;
+  font-weight: 900;
+  color: #374151;
+}
+
+.fundQueryBox {
+  position: relative;
+}
+
+.fundTextarea {
+  margin-top: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+  background: #f8fafc;
+  transition: all 0.2s ease;
+}
+
+.fundTextarea:focus {
+  outline: none;
+  border-color: #6366f1;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.fundSuggestionMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: min(300px, 100%);
+  z-index: 10;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
+  padding: 0;
+  overflow: hidden;
+}
+
+.fundSuggestionItem {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #eef2f7;
+  background: #fff;
+  color: #374151;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.fundSuggestionItem:first-child {
+  border-top: none;
+}
+
+.fundSuggestionItem.isActive {
+  background: #5b57f2;
+  color: #fff;
+  font-weight: 800;
+}
+
+.fundSuggestionItem:hover {
+  background: #f3f4f6;
+}
+
+.fundSuggestionItem.isActive:hover {
+  background: #5b57f2;
+}
+
+.fundExampleCard {
+  border: 1px solid #c7d2fe;
+  background: #eef2ff;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.fundExampleTitle {
+  font-size: 13px;
+  font-weight: 900;
+  color: #1f2937;
+}
+
+.fundExampleText {
+  margin-top: 8px;
+  color: #374151;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.fundFilterGrid {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fundFilterRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.fundFilterBlock {
+  border: 1px solid #f1f5f9;
+  border-radius: 12px;
+  padding: 6px 10px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.fundFilterLabel {
+  font-size: 11px;
+  font-weight: 800;
+  color: #64748b;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.fundFilterChip {
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: #475569;
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fundFilterChip:hover {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+  transform: translateY(-1px);
+}
+
+.fundFilterChip.isActive {
+  border-color: #6366f1;
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: #fff;
+  box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3);
+}
+
+.fundInputRow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* Dropdown Filters */
+.fundDropdown {
+  position: relative;
+  width: fit-content;
+}
+
+.fundDropdownTrigger {
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: #475569;
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.fundDropdownTrigger:hover {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+}
+
+.fundDropdownTrigger.isActive {
+  border-color: #6366f1;
+  background: #f5f3ff;
+  color: #6366f1;
+}
+
+.fundDropdownArrow {
+  transition: transform 0.2s ease;
+  opacity: 0.6;
+}
+
+.fundDropdownArrow.isOpen {
+  transform: rotate(180deg);
+}
+
+.fundDropdownMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 240px;
+  background: #fff;
+  border: 1px solid #f1f5f9;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.fundDropdownList {
+  max-height: 240px;
+  overflow-y: auto;
+  padding: 8px 0;
+}
+
+.fundDropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.fundDropdownItem:hover {
+  background: #f8fafc;
+}
+
+.fundDropdownItemText {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.fundDropdownCheck {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #cbd5e1;
+  border-radius: 4px;
+  cursor: pointer;
+  accent-color: #6366f1;
+}
+
+.fundDropdownFooter {
+  border-top: 1px solid #f1f5f9;
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+
+.fundDropdownClear {
+  background: none;
+  border: none;
+  font-size: 11px;
+  font-weight: 800;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 4px 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.fundDropdownClear:hover {
+  color: #64748b;
+}
+
+.fundDropdownApply {
+  background: #f8fafc;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #94a3b8;
+  padding: 6px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.fundDropdownApply:hover {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+/* Active buttons in dropdown footer if changes made? 
+   Actually, let's just make Apply always slightly active if clicked. */
+.fundDropdownApply:active {
+  transform: scale(0.98);
+}
+
+.fundMiniLabel {
+  font-size: 11px;
+  font-weight: 800;
+  color: #4b5563;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fundInput {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 5px 8px;
+  font-size: 12px;
+  color: #1e293b;
+  background: #f8fafc;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.fundInput:focus {
+  outline: none;
+  border-color: #6366f1;
+  background: #fff;
+}
+
+.fundGeneratedQuery {
+  margin-top: 8px;
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: #475569;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.fundGeneratedLabel {
+  color: #1e293b;
+  font-weight: 800;
+  margin-right: 4px;
+}
+
+.fundActions {
+  margin-top: 6px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.fundBtn {
+  border: none;
+  border-radius: 12px;
+  background: #6366f1;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.fundBtn:hover {
+  background: #4f46e5;
+  transform: translateY(-1px);
+}
+
+.fundBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.fundBtn.ghost {
+  background: transparent;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+}
+
+.fundBtn.ghost:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.fundError {
+  margin-top: 10px;
+  color: #b91c1c;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.fundResult {
+  margin-top: 16px;
+}
+
+.fundSummary {
+  font-size: 15px;
+  font-weight: 900;
+  color: #111827;
+}
+
+.fundInterpretation {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 700;
+}
+
+.fundEmpty {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.fundItem {
+  margin-top: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px;
+  background: #fff;
+}
+
+.fundRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.fundCaveats {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.fundItemFooter {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f3f4f6;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.fundViewMoreBtn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.fundViewMoreBtn:hover {
+  background: #1d4ed8;
+}
+
+/* Modal Styles */
+/* Modal Styles - High Fidelity Refinement */
+.fundModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.5rem;
+}
+
+.fundModalContent {
+  background: #fff;
+  width: 100%;
+  max-width: 850px;
+  max-height: 90vh;
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: modalScaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.fundModalContent.wide {
+  max-width: 1000px;
+}
+
+@keyframes modalScaleIn {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.fundModalHeader {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fundModalTitle {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.fundModalSubtitle {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.fundModalClose {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  font-size: 1.25rem;
+  color: #64748b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.fundModalClose:hover {
+  background: #f8fafc;
+  color: #0f172a;
+  border-color: #cbd5e1;
+}
+
+.fundModalBody {
+  padding: 2rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* New Metric Cards */
+.fundModalTopMetrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.fundDetailCard {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: transform 0.2s;
+}
+
+.fundDetailCard:hover {
+  transform: translateY(-2px);
+  border-color: #cbd5e1;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.fundDetailCardIcon {
+  width: 40px;
+  height: 40px;
+  background: #eff6ff;
+  color: #3b82f6;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fundDetailCardTitle {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fundDetailCardValue {
+  font-size: 1.125rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin-top: 2px;
+}
+
+.fundDetailCardSub {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+/* Chart Refinement */
+.fundModalSection.mainChart {
+  background: #fff;
+  border: 1px solid #f1f5f9;
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+
+.fundChartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.fundChartReturn {
+  font-size: 1.75rem;
+  font-weight: 950;
+  color: #059669;
+}
+
+.fundChartWrap.tall {
+  height: 300px;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.fundRangeSelector {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1.5rem;
+  padding: 4px;
+  background: #f1f5f9;
+  border-radius: 12px;
+  width: fit-content;
+  align-self: center;
+}
+
+.fundRangeBtn {
+  border: none;
+  background: transparent;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #64748b;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.fundRangeBtn:hover {
+  color: #0f172a;
+}
+
+.fundRangeBtn.active {
+  background: #fff;
+  color: #2563eb;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.fundModalGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.fundHoldingsTable {
+  border: 1px solid #f1f5f9;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.fundHoldingRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.875rem;
+  background: #fff;
+}
+
+.fundHoldingRow:last-child {
+  border-bottom: none;
+}
+
+.fundHoldingName {
+  font-weight: 700;
+  color: #334155;
+}
+
+.fundHoldingPerc {
+  font-weight: 900;
+  color: #2563eb;
+}
+
+.fundModalLoading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.fundLoader {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f1f5f9;
+  border-top: 3px solid #2563eb;
+  border-radius: 50%;
+  animation: fundSpin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes fundSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .fundModalTopMetrics {
+    grid-template-columns: 1fr;
+  }
+  .fundModalGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fundName {
+  font-size: 16px;
+  color: #111827;
+  font-weight: 900;
+}
+
+.fundScore {
+  font-size: 11px;
+  font-weight: 800;
+  color: #059669;
+  background: #f0fdf4;
+  border: 1px solid #dcfce7;
+  border-radius: 999px;
+  padding: 3px 10px;
+  text-transform: uppercase;
+}
+
+.fundMeta {
+  margin-top: 6px;
+  color: #4b5563;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.fundChipWrap {
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.fundChip {
+  border: 1px solid #e9d5ff;
+  background: #faf5ff;
+  color: #6b21a8;
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.fundList {
+  margin: 10px 0 0 18px;
+  padding: 0;
+  color: #374151;
+  font-size: 12px;
+}
+
+.fundCaveats {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #9a3412;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .fundBuilderTop {
+    grid-template-columns: 1fr;
+  }
+
+  .fundFilterRow {
+    grid-template-columns: 1fr;
+  }
+
+  .fundInputRow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .fundInputRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Sector Allocation Premium UI */
+.fundSectorLayout {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.fundSectorLegend {
+  flex: 1.2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 1rem;
+}
+
+.fundSectorLegendItem {
+  display: flex;
+  align-items: stretch;
+  gap: 0.75rem;
+}
+
+.sectorIndicator {
+  width: 4px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.sectorInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sectorName {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sectorValue {
+  font-size: 15px;
+  color: #0f172a;
+  font-weight: 800;
+}
+
+.fundSectorChartWrap {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 800px) {
+  .fundSectorLayout {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+  .fundSectorLegend {
+    width: 100%;
+  }
+}

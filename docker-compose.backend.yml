@@ -1,0 +1,24 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: fb-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - fb_mongo_data:/data/db
+
+  backend:
+    build:
+      context: ./backend
+    container_name: fb-backend
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+
+volumes:
+  fb_mongo_data:

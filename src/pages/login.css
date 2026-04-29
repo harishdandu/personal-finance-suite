@@ -1,0 +1,112 @@
+.loginPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafc;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.loginCard {
+  width: 420px;
+  max-width: 100%;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.08);
+}
+
+.loginTitle {
+  font-size: 26px;
+  font-weight: 950;
+  color: #111827;
+}
+
+.loginSub {
+  margin-top: 6px;
+  color: #6b7280;
+  font-weight: 700;
+}
+
+.loginTabs {
+  margin-top: 14px;
+  display: flex;
+  gap: 8px;
+}
+
+.loginTab {
+  appearance: none;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.loginTab.isActive {
+  border-color: rgba(209, 31, 47, 0.4);
+  background: rgba(209, 31, 47, 0.06);
+  color: #d11f2f;
+}
+
+.loginForm {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.loginLabel {
+  font-size: 12px;
+  font-weight: 800;
+  color: #374151;
+}
+
+.loginInput {
+  height: 38px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+.loginPrimaryBtn {
+  margin-top: 6px;
+  appearance: none;
+  border: none;
+  border-radius: 9px;
+  background: #d11f2f;
+  color: #fff;
+  font-weight: 900;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.loginPrimaryBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.loginInfo {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #166534;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.loginWarn {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #7f1d1d;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  padding: 10px 12px;
+  line-height: 1.45;
+}
