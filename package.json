@@ -1,6 +1,7 @@
 {
   "name": "finance-buddy",
   "private": true,
+  "type": "module",
   "workspaces": [
     "frontend",
     "backend"
